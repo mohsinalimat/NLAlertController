@@ -1,5 +1,5 @@
 # NLAlertController
 
-![Untitled](https://github.com/Loootus/NLAlertController/Images/Demonstration.gif)
+![Untitled](https://github.com/Loootus/NLAlertController/blob/master/Images/Demonstration.gif?raw=true)
 
 
