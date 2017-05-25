@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "NLAlertController"
-  s.version      = "0.0.1"
+  s.version      = "0.0.4"
   s.summary      = "A iOS ActionSheet is same as weChat"
 
   # This description is used to generate tags and improve search results.

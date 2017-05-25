@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		687699571ED6E81000B99FB9 /* NLAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 687699501ED6E81000B99FB9 /* NLAlertAction.m */; };
+		687699581ED6E81000B99FB9 /* NLAlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 687699521ED6E81000B99FB9 /* NLAlertCell.m */; };
+		687699591ED6E81000B99FB9 /* NLAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 687699541ED6E81000B99FB9 /* NLAlertController.m */; };
+		6876995A1ED6E81000B99FB9 /* NLWrappingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 687699561ED6E81000B99FB9 /* NLWrappingView.m */; };
 		68B79C8D1ED6B5BF00B7FECD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B79C8C1ED6B5BF00B7FECD /* main.m */; };
 		68B79C901ED6B5BF00B7FECD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B79C8F1ED6B5BF00B7FECD /* AppDelegate.m */; };
 		68B79C931ED6B5BF00B7FECD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B79C921ED6B5BF00B7FECD /* ViewController.m */; };
@@ -35,6 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6876994F1ED6E81000B99FB9 /* NLAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLAlertAction.h; sourceTree = "<group>"; };
+		687699501ED6E81000B99FB9 /* NLAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLAlertAction.m; sourceTree = "<group>"; };
+		687699511ED6E81000B99FB9 /* NLAlertCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLAlertCell.h; sourceTree = "<group>"; };
+		687699521ED6E81000B99FB9 /* NLAlertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLAlertCell.m; sourceTree = "<group>"; };
+		687699531ED6E81000B99FB9 /* NLAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLAlertController.h; sourceTree = "<group>"; };
+		687699541ED6E81000B99FB9 /* NLAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLAlertController.m; sourceTree = "<group>"; };
+		687699551ED6E81000B99FB9 /* NLWrappingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLWrappingView.h; sourceTree = "<group>"; };
+		687699561ED6E81000B99FB9 /* NLWrappingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLWrappingView.m; sourceTree = "<group>"; };
 		68B79C881ED6B5BF00B7FECD /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B79C8C1ED6B5BF00B7FECD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		68B79C8E1ED6B5BF00B7FECD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +90,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6876994E1ED6E81000B99FB9 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6876994F1ED6E81000B99FB9 /* NLAlertAction.h */,
+				687699501ED6E81000B99FB9 /* NLAlertAction.m */,
+				687699511ED6E81000B99FB9 /* NLAlertCell.h */,
+				687699521ED6E81000B99FB9 /* NLAlertCell.m */,
+				687699531ED6E81000B99FB9 /* NLAlertController.h */,
+				687699541ED6E81000B99FB9 /* NLAlertController.m */,
+				687699551ED6E81000B99FB9 /* NLWrappingView.h */,
+				687699561ED6E81000B99FB9 /* NLWrappingView.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		68B79C7F1ED6B5BF00B7FECD = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +128,7 @@
 		68B79C8A1ED6B5BF00B7FECD /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				6876994E1ED6E81000B99FB9 /* Source */,
 				68B79C8E1ED6B5BF00B7FECD /* AppDelegate.h */,
 				68B79C8F1ED6B5BF00B7FECD /* AppDelegate.m */,
 				68B79C911ED6B5BF00B7FECD /* ViewController.h */,
@@ -207,7 +235,7 @@
 				TargetAttributes = {
 					68B79C871ED6B5BF00B7FECD = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = WYU33QTR72;
+						DevelopmentTeam = 5YL7938ACD;
 						ProvisioningStyle = Automatic;
 					};
 					68B79CA01ED6B5BF00B7FECD = {
@@ -276,9 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				687699591ED6E81000B99FB9 /* NLAlertController.m in Sources */,
+				6876995A1ED6E81000B99FB9 /* NLWrappingView.m in Sources */,
 				68B79C931ED6B5BF00B7FECD /* ViewController.m in Sources */,
 				68B79C901ED6B5BF00B7FECD /* AppDelegate.m in Sources */,
+				687699571ED6E81000B99FB9 /* NLAlertAction.m in Sources */,
 				68B79C8D1ED6B5BF00B7FECD /* main.m in Sources */,
+				687699581ED6E81000B99FB9 /* NLAlertCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WYU33QTR72;
+				DEVELOPMENT_TEAM = 5YL7938ACD;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.loootus.Demo;
@@ -441,7 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WYU33QTR72;
+				DEVELOPMENT_TEAM = 5YL7938ACD;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.loootus.Demo;
@@ -518,6 +550,7 @@
 				68B79CB71ED6B5BF00B7FECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68B79CB81ED6B5BF00B7FECD /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +559,7 @@
 				68B79CBA1ED6B5BF00B7FECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68B79CBB1ED6B5BF00B7FECD /* Build configuration list for PBXNativeTarget "DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +568,7 @@
 				68B79CBD1ED6B5BF00B7FECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
