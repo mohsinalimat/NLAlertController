@@ -209,7 +209,6 @@
     NLAlertController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     NLAlertController *toVC   = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     
     NSTimeInterval duration = [self transitionDuration:transitionContext];
