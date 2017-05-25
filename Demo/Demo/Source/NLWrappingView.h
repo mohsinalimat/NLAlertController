@@ -25,3 +25,15 @@
 - (CGFloat)heightWithTitle:(NSString *)title message:(NSString *)message cancelAction:(NLAlertAction *)cancelAction otherActions:(NSArray <NLAlertAction *> *)actions;
 
 @end
+
+@interface UIImage (NLColor)
+
++ (UIImage *)imageWithColor:(UIColor *)color;
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
+
+@end
+
+@interface UIView (FindUIViewController)
+- (UIViewController *) firstAvailableUIViewController;
+- (id) traverseResponderChainForUIViewController;
+@end

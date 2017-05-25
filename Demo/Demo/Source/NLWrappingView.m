@@ -92,12 +92,13 @@
     if (self.cancelAction) {
         
         UIView *tmpSeperatorView = [[UIView alloc] init];
-        tmpSeperatorView.backgroundColor = [UIColor colorWithRed:228 / 255.0 green:227 / 255.0 blue:235 / 255.0 alpha:0.66];
+        tmpSeperatorView.backgroundColor = [UIColor colorWithRed:228 / 255.0 green:227 / 255.0 blue:235 / 255.0 alpha:0.72];
         [self.warppingView addSubview:tmpSeperatorView];
         self.seperatorView = tmpSeperatorView;
         
         UIButton *tmpCancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        tmpCancelButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.72];
+        [tmpCancelButton setBackgroundImage:[UIImage imageWithColor:[[UIColor whiteColor] colorWithAlphaComponent:0.72]] forState:UIControlStateNormal];
+        [tmpCancelButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:0.88 alpha:0.72]] forState:UIControlStateHighlighted];
         [tmpCancelButton setTitle:_cancelAction.title forState:UIControlStateNormal];
         [tmpCancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         tmpCancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:17];
@@ -137,8 +138,11 @@
     
     // TableView
     if (_actions.count) {
+        
+        CGFloat tableOriginY = MAX(CGRectGetMaxY(self.titleLabel.frame), CGRectGetMaxY(self.messageLabel.frame));
+        
         CGFloat tableHeight = MIN(50 * _actions.count, 250);
-        self.tableView.frame = CGRectMake(0, 50, viewWidth, tableHeight);
+        self.tableView.frame = CGRectMake(0, tableOriginY, viewWidth, tableHeight);
         
         self.tableView.scrollEnabled = (_actions.count > 5);
     }
@@ -146,7 +150,10 @@
     // Bottom Button
     if (_cancelAction) {
         
-        self.seperatorView.frame = CGRectMake(0, CGRectGetMaxY(self.tableView.frame), viewWidth, 5);
+        CGFloat cancelOriginY = MAX(CGRectGetMaxY(self.tableView.frame), CGRectGetMaxY(self.messageLabel.frame));
+        cancelOriginY = MAX(cancelOriginY, CGRectGetMaxY(self.titleLabel.frame));
+        
+        self.seperatorView.frame = CGRectMake(0, cancelOriginY, viewWidth, 5);
         self.cancelButton.frame = CGRectMake(0, CGRectGetMaxY(self.seperatorView.frame), viewWidth, 50);
     }
 }
@@ -196,6 +203,7 @@
     if (_cancelAction.handler) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [[self firstAvailableUIViewController] dismissViewControllerAnimated:YES completion:nil];
             _cancelAction.handler(_cancelAction);
         });
     }
@@ -223,4 +231,46 @@
     return height;
 }
 
+@end
+
+@implementation UIImage (NLColor)
+
++ (UIImage *)imageWithColor:(UIColor *)color {
+    
+    return [self imageWithColor:color size:CGSizeMake(1, 1)];
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    
+    UIGraphicsBeginImageContext(size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, (CGRect){CGPointZero, size});
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+@end
+
+@implementation UIView (FindUIViewController)
+- (UIViewController *) firstAvailableUIViewController {
+    // convenience function for casting and to "mask" the recursive function
+    return (UIViewController *)[self traverseResponderChainForUIViewController];
+}
+
+- (id) traverseResponderChainForUIViewController {
+    id nextResponder = [self nextResponder];
+    if ([nextResponder isKindOfClass:[UIViewController class]]) {
+        return nextResponder;
+    } else if ([nextResponder isKindOfClass:[UIView class]]) {
+        return [nextResponder traverseResponderChainForUIViewController];
+    } else {
+        return nil;
+    }
+}
 @end

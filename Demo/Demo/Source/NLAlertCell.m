@@ -29,7 +29,7 @@
     [super setHighlighted:highlighted animated:animated];
     
     if (highlighted) {
-        self.backgroundColor = [UIColor colorWithWhite:0.88 alpha:0.67];
+        self.backgroundColor = [UIColor colorWithWhite:0.88 alpha:0.72];
     }
     else {
         self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.72];
